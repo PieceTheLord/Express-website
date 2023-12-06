@@ -1,0 +1,33 @@
+@import url("//fonts.googleapis.com/css?family=Outfit:300,400,600,700&amp;lang=en");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "outfit";
+}
+
+a {
+  text-decoration: none;
+}
+
+::-ms-clear {
+  display: none;
+}
+
+.Error {
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+}
+.Error__message {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+@media (max-width: 1080px) {
+  .Error__message {
+    font-size: 28px;
+    line-height: 30px;
+  }
+}

@@ -1,0 +1,813 @@
+@import "reset" ;
+@import "vars";
+// mixins
+@mixin swit($main: false){
+    @if $main{
+        width: 50%;
+        height: 100%;
+        display: grid;
+        grid-template: 1fr 3fr 1fr /  1fr ;
+        align-items: center;
+        justify-content: center;
+    }
+    width: 600px;
+    height: 300px;
+    display: grid;
+    grid-template: 1fr 3fr 1fr / 1fr;
+    grid-gap: 20px 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+// Bem Styles 
+
+.button{
+    outline: none;
+    border: none;
+}
+.link{
+    color: $main-text-color;
+    text-decoration: none;
+    font-size: 16px;
+}
+//      ---        Start Header Style        ---
+.header{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background: $main-back-color;
+    &__container{
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0px auto;
+    }
+    &__nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        
+        width: 400px;
+        position: relative;
+    }
+    &__nav a{
+        color: $main-text-color;
+    }
+    &__menu{
+        display: none;
+
+    }
+    &__burger{
+        cursor: pointer; 
+    }
+    &__logo{
+        font-size: 22px;
+        font-weight: 500;
+        color: $main-text-color;
+    }
+}
+.close__Menu{
+    display: none;
+} 
+//      header links : hover
+.header_link{
+    position: relative;
+    padding: 0px 7px;
+    transition: .3s ease-out;
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: -10px;
+        height: 1.5px;
+        background-color: rgb(29, 29, 29);
+        width: 100%;
+        transform: scale(0);
+        transition: .3s ease-out;
+    }
+    &:hover::before{
+        transform: scale(1);
+    }
+    &:hover{
+        transform: translateY(-5px);
+    }
+}
+//      ---        End header       ---
+
+//      ---        Start Main       ---
+
+.main{
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(236, 236, 236);
+}
+.main__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+    margin: 0px auto;
+}
+
+//   ---    first Block Start    ---
+
+.first{
+    position: relative;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: space-between;
+    &__text{
+        display: block;
+        padding: 20px;
+        width: 550px;
+        height: 350px;
+        border-radius: 10px;
+        margin: 400px 0px 0px 0px;
+        color: $main-text-color;
+        box-shadow: 0px 0px 15px 5px rgba($color: #3b3b3b, $alpha: 1.0);
+        h1{
+            font-size: 44px;
+            font-weight: 600;
+            line-height: 42px;
+        }
+        p{
+            font-size: 18px;
+            font-weight: 100;
+            padding-top: 30px;
+            line-height: 20px;
+        }
+    }
+    &__smartMainImage{
+        position: absolute;
+        right: 0%;
+        top: 300px;
+        width: 500px;
+        height: 500px;
+    }
+}
+
+//      ---    first Block End    ---
+//      ---    flashCards Start
+.flashCards{
+    width: 100%;
+    height: 400px;
+    display: grid;
+    grid-template: 200px / repeat(4, minmax(200px, 1fr));
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    grid-column-gap: 50px;
+    &__item{
+        display: flex;
+        flex-direction: column;
+        resize:vertical;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.2);
+        background: #fff;
+        padding: 25px 20px 10px 30px ;
+        color: rgb(52, 52, 52);
+        transition: .3s ease-in;
+        &:hover{
+            box-shadow: 0px 0px 15px 5px $main-back-color;
+        }
+        &__title{
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 24px;
+        }
+        &__subtitle{
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: 300;
+        }
+    }
+}
+
+//      ---    flsahCards End   ---
+//      ---    second Block Start   ---
+
+.second{
+    width: 100%;
+    height: 800px;
+    // background: rgb(0,72,238);
+    // background: linear-gradient(35deg, rgba(0,72,238,1) 0%, rgba(0,0,222,1) 23%, rgba(125,29,255,1) 50%, rgba(110,14,241,1) 70%, rgba(125,0,255,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;;
+}
+.die{
+    display: block;
+    position: relative;
+    width: 75%;
+    height: 500px;
+    background: rgb(243, 243, 243);
+    border-radius: 20px;
+    box-shadow:  0px 0px 10px 2px #c5c5c540;
+    padding: 2em 4em;
+    display: grid;
+    grid-template: 1fr 2fr 1fr / 1.5fr 2fr;
+    transition: 1s ease;
+    color: $main-text-color;
+    align-items: center;
+    &__title{
+        grid-row-start: 1;
+        grid-column-start: 1;
+        font-size: 32px;
+        line-height: 30px;
+    }
+    &__description{
+        font-size: 22px;
+        line-height: 22px;
+        grid-row-start: 2;
+        grid-column-start: 1;
+        align-self: center;
+    }
+    &__buttonsContainer{
+        width: 80%;
+        grid-row: 3;
+        grid-column: 1;
+        display: flex;
+        justify-content: space-between;
+
+    }
+    &__button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 120px;
+        height: 50px;
+        border-radius: 10px;
+        text-align: center;
+        transition: .5s ease;
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+        &:hover{
+            transform: translateY(1px);
+            box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.5);
+        }
+        a{
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+    img{
+        grid-row: span 3;
+        grid-column: 2/2;
+        width: 400px;
+        justify-self: center;
+        transition: .2s ease-out;
+        &:hover{
+            transform: translateY(-10px);
+        }
+    }
+} 
+.first-die-btn{
+    background-color: $back-buttons-color;
+    color: $font-button-color;
+    &:hover{
+        background-color: $font-button-color;
+        color: $back-buttons-color;
+    }
+}
+.second-die-btn{
+    background-color: $font-button-color;
+    color: $back-buttons-color;
+    &:hover{
+        background-color: $back-buttons-color;
+        color: $font-button-color;
+    }
+}
+
+//      ---    second Block End    ---
+//      ---    third Block Start    ---
+
+.third{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.switcher{
+    @include swit($main:true);
+    &__case{
+        @include swit()
+    }
+    &__description{
+        grid-row: 2;
+        grid-column: 2;
+        text-align: center;
+        line-height: 17px;
+    }
+    &__button{
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 8.5px solid rgb(158, 158, 158);
+        border-radius: 100%;
+        cursor: pointer;
+    }
+    &__next{
+        grid-row: 1;
+        grid-column: 3;
+    }   
+    &__back{
+        grid-row: 1;
+        grid-column: 1;
+    }
+    &__autor{
+        grid-column: 2;
+        grid-row: 3;
+        justify-self: center;
+        position: relative;
+        display: grid;
+        grid-template: 1fr / 10px 100px;
+        justify-items: center;
+        font-size: 26px;
+        font-weight: 650;
+        align-items: center;
+        span{
+            grid-row: 1;
+            grid-column: 1;
+            font-size: 26px;
+        }
+    }
+    img{
+        width: 100px;
+        height: 100px;
+        align-self: center;
+        justify-self: center;
+        grid-row: 1;
+        grid-column: 2;
+    }
+}
+.case-0, .case-1{
+    display: none;
+}
+.switcherAnNext {
+    @include swit();
+    animation-name: switcher__next;
+    animation-duration: 1s;
+}
+.switcherAnBack{
+    @include swit();
+    animation: switcher__back;
+    animation-duration: 1s;
+}
+//      ---    third Block animations    ---
+@keyframes switcher__back{
+    100%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+}
+@keyframes switcher__next{
+    100%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+}
+
+//      ---    third Block End    ---
+//      ---    fourth Block Start    ---
+
+.fourth{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.benefits{
+    width: 100%;
+    height: 80%;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-gap: 20px 100px;
+    align-items: start;
+    justify-content: center;
+    // justify-items: start;
+    &__main{
+        grid-row: span 2;
+        grid-column: 1;
+        &__title{
+            font-size: 40px;
+            line-height: 42px;
+            font-weight: 600;
+        }
+        &__description{
+            padding-top: 35px;
+            font-size: 22px;
+            line-height: 26px;
+            font-weight: 500;
+        }
+    }
+    &__extra{
+        grid-column: 2;
+        &__title{
+            font-size: 28px;
+        }
+        &__description{
+            font-weight: 500;
+            padding-top: 20px;
+            font-size: 28px;
+        }
+    }
+}
+.extra-first{
+    grid-row: 1;
+}
+.extra-second{
+    grid-row: 2;
+}
+
+//      ---    fourth Block End    ---
+
+//      ---        End Main        ---
+
+//      ---        Start footer        ---
+
+.footer{
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    background: $main-back-color;
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        width: 60%;
+        &__logo{
+            font-size: 58px;
+        }
+        &__description{
+            font-size: 16px;
+            font-weight: 500;
+        }
+        &__links{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 200px;
+            justify-items: center;
+        }
+    }
+} 
+.footer-item img{
+    width: 50px;
+    height: 50px;
+    transition: .3s ease;
+    background-color: $back-buttons-color;
+    border-radius: 15px;
+    &:hover{
+        box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.5);
+    }
+}
+
+//      ---        End foooter        ---
+
+//      ___ media queries ___
+
+@media (max-width: 1440px){
+    .header{
+
+        &__nav{
+            width: 300px;
+        }
+    }
+    .link{
+        font-size: 14px;
+    }
+    .first{
+        &__text{
+            width: 400px;
+            margin-top: 200px;
+            h1{
+                font-size: 32px;
+                line-height: 28px;
+            }
+            p{
+                font-size: 16px;
+                padding-top: 20px;
+                line-height: 20px;
+            }
+        }
+        &__smartMainImage{
+            width: 300px;
+            height: 300px;
+            top: 200px;
+        }
+    }
+    .flashCards{
+        padding: 0px 10px;
+        height: 400px;
+        display: grid;
+        grid-template: 1fr 1fr / 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        &__item{
+            width: 100%;
+            height: 150px;
+            &__title{
+                font-size: 18px;
+                line-height: 20px;
+            }
+            &__subtitle{
+                font-size: 12px;
+            }
+        }
+    }
+    .die{
+        width: 100%;
+        box-shadow: inset 0px 0px 5px 2px rgb(0, 0, 0, 0.2);
+        &__buttonsContainer{
+            width: 100%;
+        }
+        img{
+        width: 320px;
+        }
+    }
+    .benefits{
+        &__main{
+            &__title{
+                font-size: 34px;
+                line-height: 32px;
+            }
+            &__description{
+                font-size: 22px;
+                line-height: 22px;
+            }
+        }
+        &__extra{
+            &__title{
+                font-size: 24px;
+                line-height: 22px;
+            }
+            &__description{
+                font-size: 18px;
+                // font-weight: 400;
+                line-height: 22px;
+            }
+        }
+    }
+}
+
+@media(max-width: 1080px) {
+    .main__container{
+        width: 100%;
+    }
+    .header__container{
+        width: 100%;
+    }
+    .first{
+        height: 600px;
+        &__text{
+            margin: 200px 0px 0px 50px;
+            width: 350px;
+            box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+            h1{
+                font-size: 24px;
+            }
+            p{
+                font-size: 12px;
+                font-weight: 400;
+            }
+        }
+        &__smartMainImage{
+            position: absolute;
+            top: 300px;
+            right: 15%;
+            height: 150px;
+            width: 150px;
+            display: block;
+        }
+    }
+    .second{
+        height: 600px;
+    }
+    .die{
+        height: 500px;
+        margin: 20px 40px;
+    }
+    .switcher{
+        padding: 20px;
+        width: 100%;
+        grid-template: 1fr, 50px 1fr 50px;
+        &__case{
+            width: 100%;
+        }
+    }
+
+    .footer{
+        height: 50px;
+        &__content{
+            width: 100%;
+        }
+        &__logo{
+            font-size: 18px;
+        }
+        &__description{
+            font-size: 10px;
+        }
+    }
+    .footer-item img{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 800px) {
+    .die{
+        min-height: 300px;
+        max-height: 500px;
+        grid-template: repeat(2, 1fr) / 1fr 1fr;
+        grid-gap: 0px 40px;
+        padding: 30px 20px;
+        grid-auto-flow: row;
+        &__title{
+            grid-column: 1;
+            grid-row: 1;
+            font-size: 22px;
+            line-height: 22px;
+            font-weight: 550;
+            align-self: start;
+        }
+        &__description{
+            grid-row: 2;
+            grid-column: 2;
+            font-size: 16px;
+            line-height: 16px;
+            font-weight: 400;
+            text-align: right;
+        }
+        &__buttonsContainer{
+            justify-self: start;
+            align-self: end;
+            width: 98%;
+            grid-column: 1;
+            grid-row: 2;
+        }
+        &__button{
+            width: 100px;
+            height: 40px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        img{
+            // align-self: start;
+            width: 200px;
+            grid-row: 1;
+            grid-column: 2;
+        }
+    }
+}
+
+@media(max-width: 600px){
+    .header{
+        display: block;
+        &__nav{
+            display: none;
+        }
+        &__menu{
+            display: block;
+            cursor: pointer;
+            transition: .4;
+        }
+    }
+    .menu__list{
+        position: absolute;
+        top: 100%;
+        left: 0px;
+        display: none;
+        height: 250px;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        background: $header-dropMenu-back-color;
+        flex-direction: column;
+        z-index: 10;
+    }
+    .burgerSubmenu:first-child{
+        border-top: none;
+    }
+    .burgerSubmenu{
+        border-top: 1px solid rgb(75, 75, 75);
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .main__container{
+        width: 100%;
+    }
+    .first{
+        height: 400px;
+        &__text{
+            margin: 100px 0px 0px 20px;
+            width: 150px;
+            height: 250px;
+        h1{
+            font-size: 14px;
+            line-height: 16px;
+        }
+        p{
+            padding-top: 15px;
+            font-size: 8px;
+            line-height: 10px;
+        }
+        }
+        &__smartMainImage{
+            width: 100px;
+            height: 100px;
+            top: 200px;
+        }
+    }
+    .flashCards{
+        height: 800px;
+        display: grid;
+        grid-template: 1fr 1fr 1fr 1fr / 1fr;
+        justify-content: space-between;
+        grid-gap: 50px;
+        &__item{
+            height: 100%;
+            &__title{
+                line-height: 18px;
+            }
+            &__subtitle{
+                margin-top: 10px;
+                line-height: 14px;
+            }
+        }
+
+    }
+    .second{
+        height: 450px;
+    }
+    .die{
+        margin: 10px 20px;
+        min-height: 300px;
+        max-height: 400px;
+        grid-gap: 40px 20px;
+        &__title{
+            font-size: 18px;
+        }
+        &__description{
+            font-weight: 400;
+            font-size: 12px;
+        }
+        &__buttonsContainer{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-self: center;
+            align-self: end;
+        }
+        img{
+            width: 150px;
+        }
+    }
+    .switcher{
+        // height: 100%;
+        &__description{
+            font-size: 12px;
+            line-height: 12px;
+        }
+    }
+    .footer{
+        height: 100px;
+        &__content{
+            display: grid;
+            grid-template: 1fr 1fr / 1fr;
+            justify-items: center;
+            height: 100%;
+            &__logo{
+                display: none;
+            }
+            &__description{
+                font-size: 14px;
+                grid-row-start: 1;
+                font-weight: 500;
+            }
+            &__links{
+                grid-row-start: 2;
+                width: 100%;
+                justify-content: space-around;
+            }
+        }
+    }
+}

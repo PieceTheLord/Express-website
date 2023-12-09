@@ -1,0 +1,50 @@
+@import url("//fonts.googleapis.com/css?family=Outfit:300,400,600,700&amp;lang=en");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "outfit";
+}
+
+a {
+  text-decoration: none;
+}
+
+::-ms-clear {
+  display: none;
+}
+
+.window {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about {
+  width: 400px;
+  height: 450px;
+  display: grid;
+  grid-template: 1fr 1fr 1fr/1fr;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+  box-shadow: inset 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+.about__block {
+  width: 50%;
+  display: grid;
+  grid-template: 1fr/1fr 1fr;
+}
+.about__block label {
+  font-size: 16px;
+  font-weight: 500;
+}
+.about__block h1 {
+  font-size: 20px;
+  font-weight: 600;
+  grid-column: 2;
+  grid-row: 1;
+}

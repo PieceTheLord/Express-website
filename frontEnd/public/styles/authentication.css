@@ -37,7 +37,7 @@ a {
   align-items: center;
   justify-items: center;
   display: grid;
-  grid-template: 1fr 1fr 1fr/1fr 1fr;
+  grid-template: 1fr 1fr 1fr/1fr;
 }
 .authentication__title {
   font-size: 28px;
@@ -65,34 +65,21 @@ a {
   width: 100%;
   height: 100%;
   grid-row: 3;
-  grid-column: 1;
+  grid-column: span 2;
   display: grid;
-  grid-template: 1fr 1fr/1fr;
+  grid-template: 1fr/1fr 1fr;
   justify-items: center;
 }
 .authentication__helpBlock a {
   color: rgb(75, 75, 75);
-  transition: 0.4s ease;
+  transition: 0.3s ease;
   padding: 10px 20px;
   align-self: start;
   border-radius: 5px;
 }
 .authentication__helpBlock a:hover {
+  transform: rotate3d(2, 10, 10, 10px, 10, 10);
   box-shadow: 0px 0px 5px 1px rgba(29, 131, 195, 0.3);
-}
-.authentication__end {
-  grid-row: 3;
-  grid-column: 2;
-}
-.authentication__end__title a {
-  font-size: 24px;
-  color: rgb(75, 75, 75);
-  padding: 20px;
-  border-radius: 5px;
-  transition: 0.4s ease;
-}
-.authentication__end__title a:hover {
-  box-shadow: inset 0px 0px 10px 2px rgba(29, 131, 195, 0.3);
 }
 
 .block-1 {

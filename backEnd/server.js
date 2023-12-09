@@ -1,14 +1,14 @@
-const express = require('express')
+const express = require('express');
 const path = require('path')
 const app = express()
 
-// const hostname = 'localhost';
-const port = 3000;
+var pathWork = 'G:/IT/JavaScriptTrain/ExploreNodeJs/SecondProject/frontEnd/'
 
-app.use(express.static(path.join('G:/IT/JavaScriptTrain/ExploreNodeJs/SecondProject/frontEnd', 'public')))
+app.set('view engine', 'ejs');
+app.use(express.static(path.join(pathWork, 'public')));
 
 app.get('/', (req, res) => {
-  res.render('G:/IT/JavaScriptTrain/ExploreNodeJs/SecondProject/frontEnd/views/')
+    res.render(pathWork = 'G:/IT/JavaScriptTrain/ExploreNodeJs/SecondProject/frontEnd/views/home.ejs')
 })
 
-app.listen(port)
+app.listen(3000)

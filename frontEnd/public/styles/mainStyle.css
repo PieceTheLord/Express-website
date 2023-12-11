@@ -771,6 +771,30 @@ a {
     font-size: 12px;
     line-height: 12px;
   }
+  .fourth {
+    height: 100%;
+  }
+  .benefits {
+    grid-gap: 30px 30px;
+  }
+  .benefits__main__title {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .benefits__main__description {
+    padding-top: 10px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .benefits__extra__title {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .benefits__extra__description {
+    font-size: 12px;
+    padding-top: 10px;
+    line-height: 14px;
+  }
   .footer {
     height: 100px;
   }

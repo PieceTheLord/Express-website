@@ -788,6 +788,30 @@
             line-height: 12px;
         }
     }
+    .fourth{
+        height: 100%;
+    }
+    .benefits{
+        grid-gap: 30px 30px;
+        &__main__title{
+            font-size: 16px;
+            line-height: 20px;
+        }   
+        &__main__description{
+            padding-top: 10px;
+            font-size: 14px;
+            line-height: 16px;
+        }
+        &__extra__title{
+            font-size: 12px;
+            line-height: 18px;
+        }
+        &__extra__description{
+            font-size: 12px;
+            padding-top: 10px;
+            line-height: 14px;
+        }
+    }
     .footer{
         height: 100px;
         &__content{

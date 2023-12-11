@@ -1,6 +1,11 @@
 @import 'reset';
 @import 'vars';
 
+*{
+    margin: 0px;
+    padding: 0px;
+    background: $main-back-color;
+}
 .window{
     width: 100%;
     min-height: 100vh;
@@ -9,7 +14,7 @@
     justify-content: center;
 }
 .signIn{
-    width: 300px;
+    width: 400px;
     height: 500px;
     display: grid;
     grid-template: 100px 1fr 100px / 1fr;
@@ -29,7 +34,7 @@
         input{
             padding: 20px 30px;
             outline: none;
-            border: 1px solid $back-buttons-color ;
+            border: 1px solid $back-buttons-color;
             border-radius: 10px;
             font-size: 16px;
             color: $main-text-color;
@@ -55,32 +60,35 @@
         grid-template: 1fr 1fr / 1fr;
         justify-content: center;
         align-items: center;
-        // justify-items: center;
+        grid-row-gap: 10px;
+        justify-items: center;
         a{
-            padding: 5px 10px;
+            padding: 10px 30px;
             border-radius: 5px;
             color: $back-buttons-color;
             transition: .2s ease;
             text-align: center;
         }
         a:hover{
-            box-shadow: 0px 0px 5px 2px rgb($main-text-color, 0.5);
+            box-shadow: inset 0px 0px 5px 2px rgb($main-text-color, 0.5);
         }
     }
     &__continue{
-        width: 100%;
+        width: 80%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        a{
-            padding: 10px 15px;
+        .button{
+            border: none;
+            outline: none;
+            padding: 15px 30px;
             border-radius: 5px;
             color: $back-buttons-color;
             transition: .2s ease-in;
             text-align: center;
         }
-        a:hover{
+        .button:hover{
             border-radius: 10px;
             box-shadow: 0px 0px 5px 2px rgb($main-text-color, 0.5);
         }

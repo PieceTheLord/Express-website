@@ -8,14 +8,16 @@
 </head>
 <body>
     <div class="window">
-        <div class="signIn">
+        <form action="/auth/login" method="post" class="signIn">
             <h1>Sign IN</h1>
             <div class="signIn__container-input">
                 <div class="signIn__input">
-                    <input type="text" placeholder="Mail">
+                    <input type="email" placeholder="Mail" 
+                    name="mail_sign" required>
                 </div>
                 <div class="signIn__input">
-                    <input type="text" placeholder="Password">
+                    <input type="password" placeholder="Password" 
+                    name="password_sign" required>
                 </div>
             </div>
             <div class="signIn__interact">
@@ -24,10 +26,13 @@
                     <a href="/">Help</a>
                 </div>
                 <div class="signIn__continue">
-                    <a href="">Continue</a>
+                    <button type="submit" href="/profile"
+                    class="button" >
+                        Continue
+                    </button>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </body>
 </html>

@@ -1,7 +1,11 @@
 @import "reset";
 @import "vars";
 
-
+*{
+    margin: 0px;
+    padding: 0px;
+    background: $main-back-color;
+}
 .window{
     width: 100%;
     min-height: 100vh;
@@ -67,14 +71,16 @@
         grid-row: 3;
         grid-column: 2;
         &__title{
-            a{
+            button{
+                outline: none;
+                border: none;
                 font-size: 24px;
                 color: $back-buttons-color;
                 padding: 20px;
                 border-radius: 5px;
                 transition: 0.4s ease;
             }
-            a:hover{
+            button:hover{
                 box-shadow: inset 0px 0px 10px 2px rgba($main-text-color, 0.3);
             }
         }

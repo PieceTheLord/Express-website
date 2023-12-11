@@ -1,0 +1,89 @@
+@import 'reset';
+@import 'vars';
+
+.window{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signIn{
+    width: 300px;
+    height: 500px;
+    display: grid;
+    grid-template: 100px 1fr 100px / 1fr;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    &__container-input{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template: 1fr 1fr / 1fr;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+    &__input{
+        input{
+            padding: 20px 30px;
+            outline: none;
+            border: 1px solid $back-buttons-color ;
+            border-radius: 10px;
+            font-size: 16px;
+            color: $main-text-color;
+        }
+        input::placeholder{
+            font-size: 16px;
+            font-weight: 500;   
+        }
+    }
+    &__interact{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template: 1fr / 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+    &__help{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template: 1fr 1fr / 1fr;
+        justify-content: center;
+        align-items: center;
+        // justify-items: center;
+        a{
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: $back-buttons-color;
+            transition: .2s ease;
+            text-align: center;
+        }
+        a:hover{
+            box-shadow: 0px 0px 5px 2px rgb($main-text-color, 0.5);
+        }
+    }
+    &__continue{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a{
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: $back-buttons-color;
+            transition: .2s ease-in;
+            text-align: center;
+        }
+        a:hover{
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px 2px rgb($main-text-color, 0.5);
+        }
+    }
+}
+

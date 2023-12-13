@@ -1,0 +1,5 @@
+DB_USER='your Database user name'
+DB_PASSWORD='your DataBase password'
+DB_DATABASE='your DataBase name'
+DB_HOST='your DataBase host'
+DB_PORT='your DataBse port'

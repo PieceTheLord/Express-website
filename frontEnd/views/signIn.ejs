@@ -9,7 +9,14 @@
 <body>
     <div class="window">
         <form action="/auth/login" method="post" class="signIn">
-            <h1>Sign IN</h1>
+            <div class="signIn__title">
+                <h1>Sign IN</h1>    
+                <ul>
+                    <% if(messages.success_msg) { %>
+                    <li><%= messages.success_msg %></li>
+                    <% } %>
+                </ul>
+            </div>
             <div class="signIn__container-input">
                 <div class="signIn__input">
                     <input type="email" placeholder="Mail" 

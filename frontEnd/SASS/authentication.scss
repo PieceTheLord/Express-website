@@ -1,22 +1,5 @@
 @import "reset";
 @import "vars";
-// Generaly styles
-
-ul{
-    width: 100%;
-    height: 100%;
-    display: grid;
-    justify-content: center;
-    li{
-        justify-self: center;
-        width: 100%;
-        height: 100%;
-        text-decoration: none;
-        list-style: none;
-        font-size: 14px;
-        color: red;
-    }
-}
 
 // main style
 *{
@@ -59,7 +42,6 @@ ul{
             font-weight: 700;
             color: $back-buttons-color;
         }
-
     }
     &__block{
         grid-column: span 2;

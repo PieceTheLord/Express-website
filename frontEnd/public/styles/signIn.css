@@ -6,6 +6,16 @@
   font-family: "outfit";
 }
 
+li {
+  justify-self: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  list-style-type: none;
+  font-size: 14px;
+  color: red;
+}
+
 a {
   text-decoration: none;
 }
@@ -36,6 +46,15 @@ a {
   align-items: center;
   justify-content: center;
   justify-items: center;
+}
+.signIn__title {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template: 1fr minmax(0px, 20px)/1fr;
 }
 .signIn__container-input {
   width: 100%;

@@ -9,22 +9,30 @@
 <body>
     <div class="window">
         <form action="/auth/reg" method="post" class="authentication">
-            <h1 class="authentication__title">Authentication</h1>
+            <div class="authentication__title">
+                <h1>Authentication</h1>
+                <ul>
+                    <% if(typeof errors != 'undefined') { %>
+                    <%   errors.forEach(error => { %>
+                        <li><%= error.message %></li>
+                    <% })} %>
+                </ul>
+            </div>
             <div class="authentication__regBlock">
                 <div class="authentication__block block-1">
                     <!-- <label>Enter your NickName: </label> -->
                     <input type="text" placeholder="NickName" 
-                    class="inputName" name="NickName_auth" required>
+                    class="inputName" name="name" required>
                 </div>
                 <div class="authentication__block block-2">
                     <!-- <label>Enter your Email: </label> -->
                     <input type="email" placeholder="Mail" 
-                    class="inputEmail" name="mail_auth" required>    
+                    class="inputEmail" name="mail" required>    
                 </div>
                 <div class="authentication__block block-3">
                     <!-- <label>Enter your password: </label> -->
                     <input type="password" placeholder="Password" 
-                    class="inputPsw" name="password_auth" required>
+                    class="inputPsw" name="password" required>
                 </div>
             </div>
             <div class="authentication__helpBlock">

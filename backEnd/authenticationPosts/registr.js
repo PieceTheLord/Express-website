@@ -8,29 +8,25 @@ routeAuthentication.get('/', (req, res) => {
     res.send('it`s work')
 })
 
-routeAuthentication.post('/reg', async (req, res) => {
-    const name = req.body.NickName_auth;
-    const mail = req.body.mail_auth;
-    const hashedPsw = await bcrypt.hash(req.body.password_auth, 10);
-    const tryRegistr = 'SELECT * FROM users WHERE nickname = $1';
-    if (pg.query(tryRegistr, [name])){
-        try{
-            const insertQuery = 'INSERT INTO users(nickname, mail, psw) VALUES($1, $2, $3)';
-            const backUpData = [name, mail, hashedPsw];
-            pg.query(insertQuery, backUpData)
-            .then(() => console.log("user authorized successfuly"))
-            .catch(error => console.error(error));
-        } catch {
-            res.redirect('/Error404')
-            console.log('something went wrong');
-        } finally{
-            pg.end()
-            .then(() => console.log('connection success is ended'))
-            .catch(error => console.error());
-        }
-    } else{
-        res.send('This name is occupied');
+routeAuthentication.post('/auth/reg', async (req, res) => {
+    const { name, mail, password} = req.body;
+    const hashedPsw = await bcrypt.hash(password, 10);
+
+    let errors = []
+
+    if (password.length < 6) {
+        errors.push({ message : "Password must be at least 7 characters" });
     }
+
+    if (errors.length > 0) {
+        res.render("G:/IT/JavaScriptTrain/ExploreNodeJs/SecondProject/frontEnd/views/authentication.ejs", { errors });
+    } else{
+    pg.query('INSERT INTO users(nickname, mail, psw) VALUES($1, $2, $3)', [name, mail, hashedPsw], (err, result) => {
+        
+    });
+    }
+
+
 })
 
 module.exports = routeAuthentication;

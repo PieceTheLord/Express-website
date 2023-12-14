@@ -1,6 +1,24 @@
 @import "reset";
 @import "vars";
+// Generaly styles
 
+ul{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    li{
+        justify-self: center;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        list-style: none;
+        font-size: 14px;
+        color: red;
+    }
+}
+
+// main style
 *{
     margin: 0px;
     padding: 0px;
@@ -17,7 +35,7 @@
     width: 400px;
     height: 500px;
     display: grid;
-    grid-template: 50px 1fr 100px / 1fr 1fr;
+    grid-template: 50px 350px 100px / 1fr 1fr;
     align-items: center;
     justify-items: center;
     &__regBlock{
@@ -30,13 +48,23 @@
         grid-template: 1fr 1fr 1fr / 1fr 1fr;
     }
     &__title{
-        font-size: 28px;
-        font-weight: 700;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template: 1fr minmax(0px, 20px) / 1fr;
+        justify-items: center;
         grid-column: span 2;
-        color: $back-buttons-color;
+        h1{
+            font-size: 28px;
+            font-weight: 700;
+            color: $back-buttons-color;
+        }
+
     }
     &__block{
         grid-column: span 2;
+        display: grid;
+        grid-template:  1fr  minmax(0px, 30px) / 1fr;
         input{
             padding: 20px 30px; 
             color: $main-text-color;

@@ -14,6 +14,22 @@ a {
   display: none;
 }
 
+ul {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+}
+ul li {
+  justify-self: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  list-style: none;
+  font-size: 14px;
+  color: red;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -32,7 +48,7 @@ a {
   width: 400px;
   height: 500px;
   display: grid;
-  grid-template: 50px 1fr 100px/1fr 1fr;
+  grid-template: 50px 350px 100px/1fr 1fr;
   align-items: center;
   justify-items: center;
 }
@@ -46,13 +62,22 @@ a {
   grid-template: 1fr 1fr 1fr/1fr 1fr;
 }
 .authentication__title {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template: 1fr minmax(0px, 20px)/1fr;
+  justify-items: center;
+  grid-column: span 2;
+}
+.authentication__title h1 {
   font-size: 28px;
   font-weight: 700;
-  grid-column: span 2;
   color: rgb(75, 75, 75);
 }
 .authentication__block {
   grid-column: span 2;
+  display: grid;
+  grid-template: 1fr minmax(0px, 30px)/1fr;
 }
 .authentication__block input {
   padding: 20px 30px;

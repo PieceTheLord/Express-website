@@ -1,9 +1,6 @@
 const pg = require('pg');
 const env = require('dotenv').config(); 
 
-const isProduction = process.env.NODE_ENV == 'production';
-
-const connectionString = '';
 
 const Pool = pg.Pool
 const pool = new Pool({
@@ -12,6 +9,6 @@ const pool = new Pool({
     database: `${process.env.DB_DATABASE}`,
     password: `${process.env.DB_PASSWORD}`,
     port: process.env.DB_PORT,
-}) ? isProduction : process.env.DATABASE;
+});
 
-module.exports = { pool };
+module.exports =  pool ;

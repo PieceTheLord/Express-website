@@ -4,15 +4,15 @@ const router = express.Router();
 // Work directory of our files for front-end
 
 // routes for our webpages
-router.get('/profile', (req, res) => {
+router.get('/Profile', (req, res) => {
     res.render('G:/IT/JavaScriptTrain/ExploreNodeJs/SecondProject/frontEnd/views/profileUser.ejs');
 })
 
-router.get('/authentication', (req, res) => {
+router.get('/Authentication', (req, res) => {
     res.render('G:/IT/JavaScriptTrain/ExploreNodeJs/SecondProject/frontEnd/views/authentication.ejs')
 })
 
-router.get('/signIn', (req, res) => {
+router.get('/SignIn', (req, res) => {
     res.render('G:/IT/JavaScriptTrain/ExploreNodeJs/SecondProject/frontEnd/views/signIn.ejs')
 })
 

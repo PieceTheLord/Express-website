@@ -11,14 +11,35 @@
 }
 .about{
     width: 400px;
-    height: 450px;
+    height: 550px;
     display: grid;
-    grid-template: 1fr 1fr 1fr / 1fr;
+    grid-template: 1fr 1fr 1fr 100px / 1fr;
     justify-content: space-between;
     align-items: center;
     justify-items: center;
     box-shadow: inset 0px 0px 20px 5px rgba($color: #000000, $alpha: 0.2);
     border-radius: 20px;
+    &__button{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template: 1fr / 1fr 1fr;
+        border: none;
+        justify-content: space-between;
+        background: none;
+        justify-items: center;
+        a{
+            color: $main-text-color;
+            outline: none;
+            cursor: pointer;
+            border: 2px solid $back-buttons-color;
+            border-radius: 10px;
+            align-self: center;
+            padding: 5px 15px;    
+            font-size: 26px;
+            font-weight: 600;
+        }
+    }
     &__block{
         width: 50%;
         display: grid;

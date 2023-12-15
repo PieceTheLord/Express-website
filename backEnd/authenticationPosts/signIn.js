@@ -1,12 +1,14 @@
 const express = require('express');
-const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt')
+const passport = require('passport')
 
 const routeSignIn = express.Router();
 
-routeSignIn.post('/login', async (req, res, next) => {
-
-})
+routeSignIn.post('/auth/SignIn', passport.authenticate('local', {
+  successRedirect: '/profile',
+  failureRedirect: "/SignIn",
+  failureFlash: true
+}));
 
 
 module.exports = routeSignIn;

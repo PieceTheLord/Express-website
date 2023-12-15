@@ -40,7 +40,7 @@ a {
 
 .signIn {
   width: 400px;
-  height: 500px;
+  height: 600px;
   display: grid;
   grid-template: 100px 1fr 100px/1fr;
   align-items: center;
@@ -55,6 +55,11 @@ a {
   justify-items: center;
   align-items: center;
   grid-template: 1fr minmax(0px, 20px)/1fr;
+}
+.signIn__title .message {
+  color: rgb(29, 131, 195);
+  font-size: 18px;
+  font-weight: 500;
 }
 .signIn__container-input {
   width: 100%;
@@ -76,10 +81,12 @@ a {
 .signIn__input input::-moz-placeholder {
   font-size: 16px;
   font-weight: 500;
+  color: rgb(29, 131, 195);
 }
 .signIn__input input::placeholder {
   font-size: 16px;
   font-weight: 500;
+  color: rgb(29, 131, 195);
 }
 .signIn__interact {
   width: 100%;

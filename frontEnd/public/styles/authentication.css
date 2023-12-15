@@ -6,12 +6,28 @@
   font-family: "outfit";
 }
 
+li {
+  justify-self: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  list-style-type: none;
+  font-size: 14px;
+  color: red;
+}
+
 a {
   text-decoration: none;
 }
 
 ::-ms-clear {
   display: none;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  background: rgb(236, 236, 236);
 }
 
 .window {
@@ -26,7 +42,7 @@ a {
   width: 400px;
   height: 500px;
   display: grid;
-  grid-template: 50px 1fr 100px/1fr 1fr;
+  grid-template: 50px 350px 100px/1fr 1fr;
   align-items: center;
   justify-items: center;
 }
@@ -37,16 +53,25 @@ a {
   align-items: center;
   justify-items: center;
   display: grid;
-  grid-template: 1fr 1fr 1fr/1fr;
+  grid-template: 1fr 1fr 1fr/1fr 1fr;
 }
 .authentication__title {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template: 1fr minmax(0px, 20px)/1fr;
+  justify-items: center;
+  grid-column: span 2;
+}
+.authentication__title h1 {
   font-size: 28px;
   font-weight: 700;
-  grid-column: span 2;
   color: rgb(75, 75, 75);
 }
 .authentication__block {
   grid-column: span 2;
+  display: grid;
+  grid-template: 1fr minmax(0px, 30px)/1fr;
 }
 .authentication__block input {
   padding: 20px 30px;
@@ -65,21 +90,36 @@ a {
   width: 100%;
   height: 100%;
   grid-row: 3;
-  grid-column: span 2;
+  grid-column: 1;
   display: grid;
-  grid-template: 1fr/1fr 1fr;
+  grid-template: 1fr 1fr/1fr;
   justify-items: center;
 }
 .authentication__helpBlock a {
   color: rgb(75, 75, 75);
-  transition: 0.3s ease;
+  transition: 0.4s ease;
   padding: 10px 20px;
   align-self: start;
   border-radius: 5px;
 }
 .authentication__helpBlock a:hover {
-  transform: rotate3d(2, 10, 10, 10px, 10, 10);
   box-shadow: 0px 0px 5px 1px rgba(29, 131, 195, 0.3);
+}
+.authentication__end {
+  grid-row: 3;
+  grid-column: 2;
+}
+.authentication__end__title button {
+  outline: none;
+  border: none;
+  font-size: 24px;
+  color: rgb(75, 75, 75);
+  padding: 20px;
+  border-radius: 5px;
+  transition: 0.4s ease;
+}
+.authentication__end__title button:hover {
+  box-shadow: inset 0px 0px 10px 2px rgba(29, 131, 195, 0.3);
 }
 
 .block-1 {

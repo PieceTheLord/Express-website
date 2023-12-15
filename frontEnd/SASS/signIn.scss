@@ -1,0 +1,107 @@
+@import 'reset';
+@import 'vars';
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    background: $main-back-color;
+}
+.window{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signIn{
+    width: 400px;
+    height: 500px;
+    display: grid;
+    grid-template: 100px 1fr 100px / 1fr;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    &__title{
+        display: grid;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        grid-template: 1fr minmax(0px, 20px) / 1fr;
+    }
+    &__container-input{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template: 1fr 1fr / 1fr;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+    &__input{
+        input{
+            padding: 20px 30px;
+            outline: none;
+            border: 1px solid $back-buttons-color;
+            border-radius: 10px;
+            font-size: 16px;
+            color: $main-text-color;
+        }
+        input::placeholder{
+            font-size: 16px;
+            font-weight: 500;   
+        }
+    }
+    &__interact{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template: 1fr / 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+    &__help{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template: 1fr 1fr / 1fr;
+        justify-content: center;
+        align-items: center;
+        grid-row-gap: 10px;
+        justify-items: center;
+        a{
+            padding: 10px 30px;
+            border-radius: 5px;
+            color: $back-buttons-color;
+            transition: .2s ease;
+            text-align: center;
+        }
+        a:hover{
+            box-shadow: inset 0px 0px 5px 2px rgb($main-text-color, 0.5);
+        }
+    }
+    &__continue{
+        width: 80%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .button{
+            border: none;
+            outline: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            color: $back-buttons-color;
+            transition: .2s ease-in;
+            text-align: center;
+        }
+        .button:hover{
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px 2px rgb($main-text-color, 0.5);
+        }
+    }
+}
+

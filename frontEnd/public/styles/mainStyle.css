@@ -4,6 +4,7 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: "outfit";
+  scroll-behavior: smooth;
 }
 
 li {
@@ -287,13 +288,13 @@ a {
 }
 
 .switcher {
-  width: 50%;
+  width: 600px;
   height: 100%;
   display: grid;
   grid-template: 1fr 3fr 1fr/1fr;
   align-items: center;
   justify-content: center;
-  width: 600px;
+  width: 100%;
   height: 300px;
   display: grid;
   grid-template: 1fr 3fr 1fr/1fr;
@@ -302,7 +303,7 @@ a {
   justify-content: center;
 }
 .switcher__case {
-  width: 600px;
+  width: 100%;
   height: 300px;
   display: grid;
   grid-template: 1fr 3fr 1fr/1fr;
@@ -365,7 +366,7 @@ a {
 }
 
 .switcherAnNext {
-  width: 600px;
+  width: 100%;
   height: 300px;
   display: grid;
   grid-template: 1fr 3fr 1fr/1fr;
@@ -377,7 +378,7 @@ a {
 }
 
 .switcherAnBack {
-  width: 600px;
+  width: 100%;
   height: 300px;
   display: grid;
   grid-template: 1fr 3fr 1fr/1fr;
@@ -673,6 +674,7 @@ a {
 @media (max-width: 600px) {
   .header {
     display: block;
+    padding: 0px 15px;
   }
   .header__nav {
     display: none;
@@ -783,6 +785,7 @@ a {
   }
   .fourth {
     height: 100%;
+    padding: 10px;
   }
   .benefits {
     grid-gap: 30px 30px;

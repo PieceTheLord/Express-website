@@ -28,8 +28,9 @@ module.exports = router ;
 function checkAuthenticated(req, res, next){
     if(req.isAuthenticated()){  
         return res.redirect('/profile');
-    };
-    next();
+    } else {
+        next();
+    }
 };
 
 function checkNotAuthenticated(req, res, next) {

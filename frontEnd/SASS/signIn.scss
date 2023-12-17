@@ -16,7 +16,7 @@
 }
 .signIn{
     width: 400px;
-    height: 500px;
+    height: 600px;
     display: grid;
     grid-template: 100px 1fr 100px / 1fr;
     align-items: center;
@@ -29,7 +29,12 @@
         justify-content: center;
         justify-items: center;
         align-items: center;
-        grid-template: 1fr minmax(0px, 20px) / 1fr;
+        grid-template: 1fr minmax(0px, 30px) / 1fr;
+        .message{
+            color: $main-text-color;
+            font-size: 18px;
+            font-weight: 500;
+        }
     }
     &__container-input{
         width: 100%;
@@ -52,6 +57,7 @@
         input::placeholder{
             font-size: 16px;
             font-weight: 500;   
+            color: $main-text-color;
         }
     }
     &__interact{

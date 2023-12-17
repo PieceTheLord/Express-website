@@ -1,12 +1,9 @@
 const pg = require('../database/database');
-const express = require('express');
-const jwt = require('jsonwebtoken');
+const express = require('express'); 
 const bcrypt = require('bcrypt');
 
+
 const routeAuthentication = express.Router();
-routeAuthentication.get('/', (req, res) => {
-    res.send('it`s work');
-});
 
 routeAuthentication.post('/auth/reg', async (req, res) => {
     const { name, mail, password} = req.body;
@@ -24,21 +21,10 @@ routeAuthentication.post('/auth/reg', async (req, res) => {
         const hashedPsw = await bcrypt.hash(password, 10);
         const insertDataQuery = 'INSERT INTO users(nickname, mail, psw) VALUES($1, $2, $3)';
         const insertDataCase = [name, mail, hashedPsw];
-        const validateName = 'SELECT * FROM users WHERE  nickname = $1';
-        const validateNameCase = [name];
-        const validateMial = 'SELECT * FROM users WHERE mail = $1';
-        const validateMailCase = [mail];
+        const validateUser = 'SELECT * FROM users WHERE  nickname = $1 or mail = $2';
+        const validateUserCase = [name, mail];
 
-        function regUser(){
-            pg.query(insertDataQuery, insertDataCase, (err, result) => {
-                if (err) {
-                    console.error(err);
-                }
-                req.flash("success_msg", "You are registered");
-            })
-        }
-
-        pg.query(validateName, validateNameCase, (err, result) => {
+        pg.query(validateUser, validateUserCase, (err, result) => {
             if (err) {
                 console.error(err);
             }
@@ -46,7 +32,16 @@ routeAuthentication.post('/auth/reg', async (req, res) => {
                 errors.push({ message: "Name or mail is invalid" })
                 res.render("G:/IT/JavaScriptTrain/ExploreNodeJs/SecondProject/frontEnd/views/authentication.ejs", { errors });
             } else {
-                regUser();
+                pg.query(insertDataQuery, insertDataCase, (err, result) => {
+                    if (err) {
+                        console.error(err);
+                    }
+                    else{
+                        req.flash('success_msg', "You are registered. Now sign In");
+                        res.redirect('/SignIn');
+                    }
+                    
+                })
             }
         })
     }

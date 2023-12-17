@@ -11,18 +11,24 @@
         <div class="about">
             <div class="about__block">
                 <label>NickName :</label>
-                <h1>EPMTY</h1>
+                <h1>
+                    <%= userName.charAt(0).toUpperCase() + userName.slice(1) %>
+                </h1>
             </div>
             <div class="about__block">
                 <label>Mail :</label>
-                <h1>EPMTY</h1>
+                <h1>
+                    <%= userMail %>
+                </h1>
             </div>
             <div class="about__block">
                 <label>Password :</label>
-                <h1>EPMTY</h1>
+                <h1>
+                    EMPTY
+                </h1>
             </div>
             <button class="about__button">
-                <a>LogOut</a>
+                <a href="/auth/logout">LogOut</a>
                 <a href="/">Back</a>
             </button>
         </div>

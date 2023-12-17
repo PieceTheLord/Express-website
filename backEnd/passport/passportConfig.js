@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 
 
 function initialize(passport) {
-  const authenticateUser = (mail, password, done) => {
+  const authenticateUser = (mail, password, done) => {     
     const validateUser = 'SELECT * FROM users WHERE  mail = $1';
     const validateUserCase = [mail];
 
@@ -14,15 +14,18 @@ function initialize(passport) {
         console.error(err);
       };
 
+      console.log(result.rows); 
+
       if (result.rows.length > 0) {
         const user = result.rows[0];
-        console.log(user);
-        bcrypt.compare(password, user.password, (err, isMatch) => {
+        // console.log(`userPsw: ${user.psw} \n, insertPsw ${password}`);
+        bcrypt.compare( password, user.psw, (err, isMatch) => {
           if (err) {
             console.error(err);
           };
 
           if (isMatch) {
+            console.log(user);
             return done(null, user);
           } else {
             done(null, false, { message: "Password or mail invalid" })
@@ -35,7 +38,7 @@ function initialize(passport) {
     });
   };
 
-  passport.use(new LocalStrategy({
+  passport.use(new LocalStrategy({  
       usernameField: 'mail',
       passwordField: 'password'
    }, 
@@ -53,13 +56,11 @@ function initialize(passport) {
       if (err) {
         console.error(err);
       } else {
-        console.log(user);
         done(null, result.rows[0])
       }
     })
   })
 
 };
-
 
 module.exports = initialize;

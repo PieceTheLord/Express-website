@@ -54,7 +54,7 @@ a {
   justify-content: center;
   justify-items: center;
   align-items: center;
-  grid-template: 1fr minmax(0px, 20px)/1fr;
+  grid-template: 1fr minmax(0px, 30px)/1fr;
 }
 .signIn__title .message {
   color: rgb(29, 131, 195);

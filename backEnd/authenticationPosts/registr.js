@@ -25,7 +25,6 @@ routeAuthentication.post('/auth/reg', async (req, res) => {
         const validateUserCase = [name, mail];
 
         pg.query(validateUser, validateUserCase, (err, result) => {
-            console.log(`name: ${name}, mail: ${mail}`);
             if (err) {
                 console.error(err);
             }

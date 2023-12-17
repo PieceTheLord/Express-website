@@ -1,58 +1,60 @@
-const http = require('node:http');
-const fs = require('fs')
+const express = require('express');
+const flash = require('express-flash');
+const expressSession = require('express-session');
+const passport = require('passport');
+const path = require('path');
 
-const hostname = 'localhost';
-const port = 3000;
+const initializePassport = require('./passport/passportConfig');
+    
+initializePassport(passport);
 
-const server = http.createServer((req, res) => {
-  console.log(req.url, req.method);
+const app = express();
+var pathWork = 'G:/IT/JavaScriptTrain/ExploreNodeJs/SecondProject/frontEnd/';
 
-  // set header content type
-  res.setHeader("Content-Type", 'text/html')
+// Acitvate supprots of .ejs files
+app.set('view engine', 'ejs');
 
-  let path = '../frontEnd/views/';
-  switch (req.url) {
-    case '/':
-      path += 'index.html';
-      res.statusCode = 200;
-      break;
-  
-    case '/profile':
-      path += 'profileUser.html';
-      res.statusCode = 200;
-      break;
-  
-    // case '/about-Me':
-    //   res.statusCode = 301;
-    //   res.setHeader("Location", '/profile')
-    //   res.end();
-    //   break;
+// Deploying onto the server the public folder, which keeps design files
+app.use(express.static(path.join(pathWork, 'public')));
 
-    case '/authentication':
-      path += 'authentication.html';
-      res.statusCode = 200;
-      break;
-  
-    default:
-      path += 'Error404.htm';
-      res.statusCode = 404;
-      break;
-  }
+// Apply supports of sends json files
+app.use(express.json())
 
-  fs.readFile(path, (err, data) => {
-    if (err) {
-      console.log('Happened an error');
-      res.end()
-    } else{
-      res.end(data)
-    }
-  })
+// Reject the encode of url addresses
+app.use(express.urlencoded({ extended: false }));
 
+// Set up the user seesion for authentication
+app.use(expressSession({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: false,    
+}));
+
+// Initializing a user, hence get a data from the database
+app.use(passport.initialize());
+
+// Set up the session for out server
+app.use(passport.session());
+
+// Set up the flash method for our server
+app.use(flash());
+
+// Render main webpage
+app.get('/', (req, res) => {
+    res.render(pathWork = 'G:/IT/JavaScriptTrain/ExploreNodeJs/SecondProject/frontEnd/views/home.ejs');
 });
+// Import the routes' of our server
+const profileRoute = require('./routes/routing');
+const reg = require('./authenticationPosts/registr');
+const signIn = require('./authenticationPosts/signIn');
+const userLogout = require('./authenticationLogout/userLogout');
+// Add the routes
+app.use('/',  [profileRoute, reg, signIn]);
+// Add logout function
+app.use('/', [userLogout]);
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+// Start the server
+app.listen(3000);
 
 
 

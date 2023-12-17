@@ -1,0 +1,51 @@
+ <!DOCTYPE ejs>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/signIn.css">
+</head>
+<body>
+    <div class="window">
+        <form action="/auth/SignIn" method="post" class="signIn">
+            <div class="signIn__title">
+                <h1>Sign IN</h1>    
+                <% if(messages.success_msg) { %>
+                    <ul>
+                        <li class="message"><%= messages.success_msg %></li>
+                    </ul>
+                <% } %>
+
+                <% if(messages.error) { %>
+                    <ul>
+                        <li><%= messages.error %></li>
+                    </ul>
+                <% } %>
+            </div>
+            <div class="signIn__container-input">
+                <div class="signIn__input">
+                    <input type="email" placeholder="Mail" 
+                    name="mail" required>
+                </div>
+                <div class="signIn__input">
+                    <input type="password" placeholder="Password" 
+                    name="password" required>
+                </div>
+            </div>
+            <div class="signIn__interact">
+                <div class="signIn__help">
+                    <a href="/authentication">Register Account</a>
+                    <a href="/">Help</a>
+                </div>
+                <div class="signIn__continue">
+                    <button type="submit" href="/profile"
+                    class="button">
+                        Continue
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

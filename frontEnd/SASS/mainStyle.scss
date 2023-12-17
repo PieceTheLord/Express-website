@@ -3,14 +3,14 @@
 // mixins
 @mixin swit($main: false){
     @if $main{
-        width: 50%;
+        width: 600px;
         height: 100%;
         display: grid;
         grid-template: 1fr 3fr 1fr /  1fr ;
         align-items: center;
         justify-content: center;
     }
-    width: 600px;
+    width: 100%;
     height: 300px;
     display: grid;
     grid-template: 1fr 3fr 1fr / 1fr;

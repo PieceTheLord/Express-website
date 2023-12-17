@@ -676,6 +676,7 @@
 @media(max-width: 600px){
     .header{
         display: block;
+        padding: 0px 15px;
         &__nav{
             display: none;
         }
@@ -790,6 +791,7 @@
     }
     .fourth{
         height: 100%;
+        padding: 10px;
     }
     .benefits{
         grid-gap: 30px 30px;

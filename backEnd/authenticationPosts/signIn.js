@@ -8,7 +8,6 @@ routeSignIn.post('/auth/SignIn', passport.authenticate('local', {
   successRedirect: '/profile',
   failureRedirect: "/SignIn",
   failureFlash: true,
-  keepSessionInfo: false
 }));
 
 
